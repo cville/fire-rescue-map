@@ -3,6 +3,8 @@ Data visualization project using cville Fire/EMS data.
 
 ## Getting Started
 
+If you don't want to scrape the data yourself, you can download the resulting files from http://meekohi.com/rids/data/calltimes.json and http://meekohi.com/rids/data/rids.json
+
 #### Scraping Data
 * You will need [nodejs](http://nodejs.com) and [mongodb](http://mongodb.com) installed.
 * To geolocate addresses, you will need a [Developer Key for the Google Geolocation API](https://developers.google.com/maps/documentation/geolocation/get-api-key).
