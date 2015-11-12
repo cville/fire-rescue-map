@@ -1,0 +1,22 @@
+{
+  "name": "rids",
+  "version": "1.2.0",
+  "dependencies": {
+  	"yargs": "latest",
+    "async": "latest",
+    "fs-extra": "latest",
+    "moment": "latest",
+    "underscore": "latest",
+    "request": "latest",
+    "elasticsearch":"latest",
+    "mongodb":"latest",
+    "cheerio":"latest",
+    "node-geocoder":"latest",
+    "bottleneck":"latest",
+    "csv":"latest"
+  },
+  "engines": {
+    "node": "0.12.x",
+    "npm": "latest"
+  }
+}

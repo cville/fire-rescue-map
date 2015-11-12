@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>
+      Albemarle County Fire Rescue System Response Map
+    </title>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.css">
+    <style>
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0; }
+      #mapID{ height: 100%; background-color:#fffffe; }
+      .container-fluid { padding-left:0 }
+      .leaflet-bottom+.leaflet-right { display:none; }
+      .map-column { position:fixed; }
+
+      .domain {
+        stroke-width:0.5px;
+        stroke:#ccc;
+        fill:none;
+      }
+      .y {
+        font-weight:300;
+      }
+      .chart-title {
+        padding-top:10px;
+        font-weight:700;
+        text-align:center;
+      }
+      label {
+        font-weight:500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid" style="height:100%">
+      <div class="row">
+        <div class="col-xs-7 map-column" style="height:100%;">
+          <div id="mapID">
+            <!-- The Map -->
+          </div>
+        </div>
+        <div class="col-xs-5 col-xs-offset-7">
+          <div class="page-header">
+            <h1><strong>Ambulance Response Data</strong></h1>
+            <h3>Albemarle County and Charlottesville, VA</h3>
+            <author>Michael Holroyd, Sept. 2015</author>
+          </div>
+          <p>
+            The <em>Albemarle County Fire Rescue System</em> consists of four rescue squad stations and eleven fire rescue stations staffed by a combination of volunteer and career personel. These stations provide emergency fire, rescue, and medical services for approximately 93,000 residents and 726 square miles of land, including urban and rural areas.
+          </p>
+
+          <h4>Dispatch</h4>
+          <p>
+            Calls to 911 are answered at the Emergency Communications Center (ECC) and dispatched to the nearest stations with appropriate equipment and personel. Data including the type of request, location, and dispatch times are made available by the ECC. The following visualizations use historical data from August 2011 through August 2015.
+          </p>
+          <p>
+            The size of each circle represents how many calls were made to a particular address, and the color represents the amount of time between a vehicle being dispatched and arriving on-scene.
+          </p>
+          <p>
+            <small>Here we are just looking at <em>medical</em> incidents. If you'd like to see fire incidents as well, <a href='mailto:meekohi@gmail.com'>contact me</a>.</small>
+          </p>
+          
+          <div class="chart-title">
+            Volume of calls receieved (calls in blue result in a vehicle being dispatched)
+          </div>
+          <div id="callVolume">
+          </div>
+
+          <div class="chart-title">
+            Time from call receieved until vehicle dispatch
+          </div>
+          <div id="dispatch">
+          </div>
+
+          <div class="chart-title">
+            Time from vehicle dispatch to arriving on-scene
+          </div>
+          <div id="arrival">
+          </div>
+
+          <h4>The Stations</h4>
+          <p>
+            <em>Click on a station to see its location and the incidents it has responded to on the map. <small>(Stations with no rescue calls omitted.)</small></em>
+
+            <div id="station_list">
+              <!-- Gets filled with stations to click on -->
+            </div>
+          </p>
+
+        </div>
+      </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.js"></script>
+    <script src="js/vendor/leaflet-providers.js"></script>
+    <script src="js/vendor/leaflet.hash.js"></script>
+    <script src="js/vendor/d3.v3.js"></script>
+    <script src="js/vendor/colorbrewer.js"></script>
+    <script src="js/vendor/leaflet.d3.js"></script>
+    <script src="js/vendor/svgoverlay.js"></script>
+    <script src="js/vendor/animatescroll.min.js"></script>
+
+    <script src="js/script.js"></script>
+    <script src="js/stations.js"></script>
+    <script src="js/call_times.js"></script>
+    <script src="js/call_volume.js"></script>
+  </body>
+</html>
