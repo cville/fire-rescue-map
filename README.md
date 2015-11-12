@@ -1,5 +1,5 @@
 # fire-rescue-map
-Data visualization project using cville Fire/EMS data.
+Data visualization project using cville Fire/EMS data. Demo is available at [meekohi.com/rids](http://meekohi.com/rids).
 
 ## Getting Started
 
